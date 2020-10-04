@@ -155,8 +155,8 @@ header{
 .nav-toggle{
     display: none;
 }
-}
 
+}
 
 @media screen and (max-width: 800px){
 header{
@@ -278,7 +278,7 @@ header{
     display: inline-block;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .intro {
         display: grid;
         width: min-content;
@@ -295,7 +295,7 @@ header{
         min-width: 250px;
         position: relative;
         z-index: 2;
-
+        margin: 0 auto;
         object-fit: cover;
         box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
         display: block;
@@ -305,10 +305,7 @@ header{
     .intro__img:hover {
         box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
         margin-top: 0;
-        
-
     }
-
 
     .section__subtitle--intro {
         align-self: start;
@@ -320,6 +317,7 @@ header{
         width: calc(100% + 1.5em);
         margin-top: -3em;
     }
+    
 }
 
 /* My services section */
@@ -388,8 +386,11 @@ header{
 
 .about-me {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     padding-bottom: 0;
+}
+.about-me__img{
+    box-shadow: var(--bs);
 }
 @media (min-width: 830px){
 .section__subtitle--about{
@@ -398,17 +399,15 @@ margin-top: -3em;
 .about-me__body{
     margin-top: -5em;
 }
+
 }
-/*
-.about-me__img{
-    box-shadow: var(--bs);
-}
-*/
-@media (min-width: 600px){
+
+
+
+@media (min-width: 800px){
     .about-me{
         display: grid;
         margin: 0 auto;
-    
         grid-column: 1fr 200px;
         grid-template-areas: 
             "title img"
@@ -416,8 +415,12 @@ margin-top: -3em;
             "body img";
             
     }
+    .section__title--about{
+        grid-area: title;
+    }
 
     .section__subtitle--about{
+        grid-area: subtitle;
         grid-column: 1 / -1;
         grid-row: 2;
         align-self: start;
@@ -429,8 +432,14 @@ margin-top: -3em;
         grid-area: img;
         z-index: 10;
         position: relative;
+        margin-bottom: 100px;
+        
     }
+    
+   
 }
+
+/* My Work */
 
 .my-work {
     background-color: var(--clr-dark);
