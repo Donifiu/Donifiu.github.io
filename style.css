@@ -80,11 +80,11 @@ h3 {font-size: var(--fs-h3)}
     margin-bottom: .25em;
 }
 
-.section__title--intro {
+.section__title-intro {
     font-weight: var(--fw-reg);
 }
 
-.section__title--intro strong {
+.section__title-intro strong {
     display: block;
 }
 
@@ -93,8 +93,8 @@ h3 {font-size: var(--fs-h3)}
     font-size: var(--fs-h3);
 }
 
-.section__subtitle--intro,
-.section__subtitle--about{
+.section__subtitle-intro,
+.section__subtitle-about{
     
     background-image: linear-gradient(to left, #2af598 0%, #576e7c 100%);
     padding: .25em 1em;
@@ -105,10 +105,10 @@ h3 {font-size: var(--fs-h3)}
 
 
 
-.section__subtitle--work {
+.section__subtitle-work {
     color: var(--clr-light);
     font-weight: var(--fw-bold);
-    margin-bottom: 2em;
+    margin: 2em 0;
     font-weight: 400;
 }
 
@@ -292,10 +292,10 @@ h3 {font-size: var(--fs-h3)}
 
     .intro__img:hover {
         box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
-        margin-top: 0;
+        transform: scale(0.95);
     }
 
-    .section__subtitle--intro {
+    .section__subtitle-intro {
         display: inline-block;
         align-self: start;
         grid-column: -1 / 1;
@@ -319,17 +319,17 @@ h3 {font-size: var(--fs-h3)}
     background-blend-mode: multiply;
 }
 
-.section__title--services {
+.section__title-services {
     background: linear-gradient(to left, #2af598 0%, #576e7c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
 }
 
-.section__title--services::after {
+.section__title-services::after {
     content: '';
     display: block;
-    width: 10em;
+    width: 5em;
     height: 1px;
     margin: 0.5em auto 1em;
     background: var(--clr-light);
@@ -375,7 +375,7 @@ h3 {font-size: var(--fs-h3)}
 
 
 @media (min-width: 830px){
-.section__subtitle--about{
+.section__subtitle-about{
 margin-top: -3em;
 }
 .about-me__body{
@@ -390,7 +390,7 @@ margin-top: -3em;
     .about-me{
         display: grid;
         max-width: 1000px;
-        margin: 0 auto 100px;
+        margin: 0 auto 50px;
         padding-bottom: 0;
         grid-column: 1fr 200px;
         grid-template-areas: 
@@ -399,11 +399,11 @@ margin-top: -3em;
             "body img";
             
     }
-    .section__title--about{
+    .section__title-about{
         grid-area: title;
     }
 
-    .section__subtitle--about{
+    .section__subtitle-about{
         grid-area: subtitle;
         grid-column: 1 / -1;
         grid-row: 2;
@@ -424,7 +424,7 @@ margin-top: -3em;
     .about-me__img:hover{
         box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
         margin-top: 0;
-        transform: rotate(2deg);
+        transform: scale(0.95);
     }
     
    
@@ -438,7 +438,50 @@ margin-top: -3em;
     text-align: center;
     
 }
-h2.section__title.section__title--work {
+
+.my-work__items{
+    max-width: 1000px;
+    margin: 2em auto;
+}
+
+.my-work__img{
+    width: 500px;
+    height: auto;
+}
+@media screen and (max-width: 800px){
+    .my-work__text{
+        padding: 2em 0 0;
+    }
+
+    .my-work__text-mobile{
+        display: block;
+        padding: 2em 0 0;
+    }
+    
+    .my-work__text-default{
+        display: none;
+    }
+
+    .my-work__item{
+        padding: 1em 0;
+    }
+
+}
+
+@media screen and (min-width: 800px){
+    .my-work__item{
+        display: flex;
+        align-items: center;
+        padding: 2em 0;
+    }
+
+    .my-work__text-mobile{
+        display: none;
+    }
+}
+
+
+h2.section__title.section__title-work {
     background: linear-gradient(to left, #2af598 0%, #576e7c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
