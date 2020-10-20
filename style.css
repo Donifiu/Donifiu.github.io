@@ -22,6 +22,8 @@
     --fs-nav: 0.9rem;
     --fs-body: 1rem;
 
+    --bg-gradient: linear-gradient(to left, #2af598 0%, #576e7c 100%);
+
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
           0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
@@ -94,7 +96,8 @@ h3 {font-size: var(--fs-h3)}
 }
 
 .section__subtitle-intro,
-.section__subtitle-about{
+.section__subtitle-about,
+.section__subtitle-my-work{
     
     background-image: linear-gradient(to left, #2af598 0%, #576e7c 100%);
     padding: .25em 1em;
@@ -102,7 +105,6 @@ h3 {font-size: var(--fs-h3)}
     margin-bottom: 1em;
     transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
 
 
 .section__subtitle-work {
@@ -168,6 +170,7 @@ h3 {font-size: var(--fs-h3)}
 
     .logo{
         max-width: 100px;
+        object-fit: contain;
     }
 
     .nav{
@@ -448,14 +451,19 @@ margin-top: -3em;
     width: 500px;
     height: auto;
 }
-@media screen and (max-width: 800px){
-    .my-work__text{
-        padding: 2em 0 0;
-    }
 
+.iconify{
+    width: 50px;
+    font-size: 30px;
+}
+
+
+@media screen and (max-width: 1100px){
+    .my-work__text,
     .my-work__text-mobile{
-        display: block;
         padding: 2em 0 0;
+        text-align: center;
+        display: block;
     }
     
     .my-work__text-default{
@@ -466,17 +474,53 @@ margin-top: -3em;
         padding: 1em 0;
     }
 
+    .my-work__img{
+        margin: 0 auto;
+    }
+
 }
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 1100px){
     .my-work__item{
         display: flex;
         align-items: center;
-        padding: 2em 0;
+        
+    }
+    .my-work__text{
+        text-align: left;
+    }
+    
+    .my-work__text-default,
+    .my-work__text-mobile{
+        text-align: right;
     }
 
     .my-work__text-mobile{
         display: none;
+    }
+
+    .my-work__item:nth-of-type(1),
+    .my-work__item:nth-of-type(3)
+    {
+        position: relative;
+        left: -10px;
+    }
+
+    .my-work__text > p {
+        padding: 0 .5em;
+    }
+
+    .my-work__text-default > p {
+        padding: 0 .5em;
+    }
+    
+    .right{
+        background-image: linear-gradient(to right, #2af598 0%, #576e7c 100%);
+    }
+
+    .vl{
+        border: 5px solid #576e7c;
+        height: 245.5px;
     }
 }
 
